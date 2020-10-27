@@ -6,12 +6,11 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 17:50:39 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/26 17:52:39 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/27 13:40:23 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
 #include <stdbool.h>
 
 bool	ft_isalpha(char c)

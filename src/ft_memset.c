@@ -6,12 +6,13 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:44:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/26 15:07:33 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/27 13:45:32 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdint.h>
+#include <stddef.h>
 
 void	ft_memset(void *s, uint8_t c, size_t n)
 {

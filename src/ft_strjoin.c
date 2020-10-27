@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_strjoin.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 15:55:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 13:48:54 by jkoers        ########   odam.nl         */
+/*   Created: 2020/10/27 11:06:44 by jkoers        #+#    #+#                 */
+/*   Updated: 2020/10/27 14:16:46 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
-#include <stddef.h>
 #include <stdlib.h>
+#include <stddef.h>
 
-char	*ft_strnstr(char *big, char *little, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	max_shifts;
-	size_t	little_len;
+	char	*joined;
+	size_t	s1_len;
+	size_t	s2_len;
 
-	little_len = ft_strlen(little);
-	max_shifts = ft_strlen(big);
-	if (max_shifts > len)
-		max_shifts = len;
-	max_shifts -= little_len;
-	while (max_shifts > 0)
-	{
-		if (ft_strncmp(little, big, little_len) == 0)
-			return (big);
-		big++;
-		max_shifts--;
-	}
-	return (NULL);
+	s1_len = ft_strlen((char *)s1);
+	s2_len = ft_strlen((char *)s2);
+	joined = malloc((s1_len + s2_len + 1) * sizeof(char));
+	ft_memcpy(joined, (char *)s1, s1_len * sizeof(char));
+	ft_memcpy(joined + s1_len, (char *)s2, (s2_len + 1) * sizeof(char));
+	return (joined);
 }

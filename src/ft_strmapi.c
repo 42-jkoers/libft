@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_strmapi.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 15:55:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 13:48:54 by jkoers        ########   odam.nl         */
+/*   Created: 2020/10/27 13:09:27 by jkoers        #+#    #+#                 */
+/*   Updated: 2020/10/27 14:34:11 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
 #include <stddef.h>
 #include <stdlib.h>
 
-char	*ft_strnstr(char *big, char *little, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	max_shifts;
-	size_t	little_len;
+	char			*new_s;
+	size_t			s_len;
+	unsigned int	i;
 
-	little_len = ft_strlen(little);
-	max_shifts = ft_strlen(big);
-	if (max_shifts > len)
-		max_shifts = len;
-	max_shifts -= little_len;
-	while (max_shifts > 0)
+	s_len = ft_strlen((char *)s);
+	new_s = malloc((s_len + 1) * sizeof(char));
+	i = 0;
+	while (i < (unsigned int)s_len)
 	{
-		if (ft_strncmp(little, big, little_len) == 0)
-			return (big);
-		big++;
-		max_shifts--;
+		new_s[i] = (*f)(i, s[i]);
+		i++;
 	}
-	return (NULL);
+	return (new_s);
 }

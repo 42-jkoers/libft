@@ -6,13 +6,14 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:44:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/26 15:10:10 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/27 10:48:49 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdint.h>
 
+void	*ft_memccpy(void *dest, void *src, uint8_t c, size_t n)
 {
 	uint8_t *d;
 	uint8_t *s;

@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_strdup.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 15:55:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 13:48:54 by jkoers        ########   odam.nl         */
+/*   Created: 2020/10/27 13:46:53 by jkoers        #+#    #+#                 */
+/*   Updated: 2020/10/27 14:35:30 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
-#include <stddef.h>
 #include <stdlib.h>
+#include <stddef.h>
 
-char	*ft_strnstr(char *big, char *little, size_t len)
+char	*ft_strdup(char *str)
 {
-	size_t	max_shifts;
-	size_t	little_len;
+	char	*dup;
+	size_t	size;
 
-	little_len = ft_strlen(little);
-	max_shifts = ft_strlen(big);
-	if (max_shifts > len)
-		max_shifts = len;
-	max_shifts -= little_len;
-	while (max_shifts > 0)
-	{
-		if (ft_strncmp(little, big, little_len) == 0)
-			return (big);
-		big++;
-		max_shifts--;
-	}
-	return (NULL);
+	size = ft_strlen(str) + 1;
+	dup = malloc(size * sizeof(char));
+	ft_memcpy(dup, str, size * sizeof(char));
+	return (dup);
 }

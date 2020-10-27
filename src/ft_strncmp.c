@@ -6,12 +6,13 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 17:22:46 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/26 17:30:18 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/27 13:48:28 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdint.h>
+#include <stddef.h>
 
 int8_t	ft_strncmp(char *s1, char *s2, size_t n)
 {

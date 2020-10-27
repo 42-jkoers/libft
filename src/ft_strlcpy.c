@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcpy.1.c                                     :+:    :+:            */
+/*   ft_strlcpy.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 14:44:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/26 15:29:09 by jkoers        ########   odam.nl         */
+/*   Created: 2020/10/27 10:31:07 by jkoers        #+#    #+#                 */
+/*   Updated: 2020/10/27 13:48:03 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
+#include <stddef.h>
 
 size_t	ft_strlcpy(char *dst, char *src, size_t size)
 {

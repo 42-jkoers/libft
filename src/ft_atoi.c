@@ -6,12 +6,12 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 17:30:43 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/26 17:49:06 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/27 13:38:10 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
+#include <stddef.h>
 #include <stdbool.h>
 
 static int64_t	ft_str_to_i64(char *str)

@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_substr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 15:55:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 13:48:54 by jkoers        ########   odam.nl         */
+/*   Created: 2020/10/27 10:58:39 by jkoers        #+#    #+#                 */
+/*   Updated: 2020/10/27 14:18:44 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
-#include <stddef.h>
 #include <stdlib.h>
+#include <stddef.h>
 
-char	*ft_strnstr(char *big, char *little, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	max_shifts;
-	size_t	little_len;
+	char	*substr;
+	ssize_t	s_leftover;
 
-	little_len = ft_strlen(little);
-	max_shifts = ft_strlen(big);
-	if (max_shifts > len)
-		max_shifts = len;
-	max_shifts -= little_len;
-	while (max_shifts > 0)
-	{
-		if (ft_strncmp(little, big, little_len) == 0)
-			return (big);
-		big++;
-		max_shifts--;
-	}
-	return (NULL);
+	s_leftover = ft_strlen((char *)s) - start;
+	if (s_leftover <= 0)
+		return (NULL);
+	if ((size_t)s_leftover < len)
+		len = (size_t)s_leftover;
+	substr = malloc((len + 1) * sizeof(char));
+	ft_memcpy(substr, (char *)s + start, len * sizeof(char));
+	substr[len] = '\0';
+	return (substr);
 }
