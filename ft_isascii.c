@@ -6,15 +6,13 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 23:08:11 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 14:22:58 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/28 11:44:52 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdbool.h>
 
-bool	ft_isascii(char c)
+int	ft_isascii(int c)
 {
-	(void)c;
-	return (true);
+	return (c >= 0 && c <= 127);
 }

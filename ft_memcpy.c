@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:44:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 13:44:42 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/27 15:11:57 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dest, void *src, size_t n)
 	uint8_t *d;
 	uint8_t *s;
 
+	if (dest == NULL && src == NULL)
+		return (dest);
 	d = dest;
 	s = src;
 	while (n > 0)

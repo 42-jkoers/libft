@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 13:09:27 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 14:34:11 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/28 23:09:40 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*new_s;
-	size_t			s_len;
-	unsigned int	i;
+	char	*new_s;
+	size_t	s_len;
+	size_t	i;
 
 	s_len = ft_strlen((char *)s);
 	new_s = malloc((s_len + 1) * sizeof(char));
+	if (new_s == NULL)
+		return (NULL);
+	new_s[s_len] = '\0';
 	i = 0;
-	while (i < (unsigned int)s_len)
+	while (i < s_len)
 	{
 		new_s[i] = (*f)(i, s[i]);
 		i++;

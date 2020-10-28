@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 15:55:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 13:48:54 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/28 23:19:02 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,17 @@
 
 char	*ft_strnstr(char *big, char *little, size_t len)
 {
-	size_t	max_shifts;
-	size_t	little_len;
+	size_t little_len;
 
 	little_len = ft_strlen(little);
-	max_shifts = ft_strlen(big);
-	if (max_shifts > len)
-		max_shifts = len;
-	max_shifts -= little_len;
-	while (max_shifts > 0)
+	if (little_len == 0)
+		return ((char *)big);
+	while (len >= little_len)
 	{
-		if (ft_strncmp(little, big, little_len) == 0)
-			return (big);
+		len--;
+		if (ft_memcmp(big, little, little_len) == 0)
+			return ((char *)big);
 		big++;
-		max_shifts--;
 	}
 	return (NULL);
 }

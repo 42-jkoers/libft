@@ -6,13 +6,13 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 23:09:55 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/26 23:12:50 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/28 23:09:19 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_toupper(char c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);

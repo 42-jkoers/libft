@@ -6,7 +6,7 @@
 #    By: joppe <joppe@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/23 17:53:14 by joppe         #+#    #+#                  #
-#    Updated: 2020/10/27 14:33:37 by jkoers        ########   odam.nl          #
+#    Updated: 2020/10/27 14:55:47 by jkoers        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,3 +45,6 @@ $(BUILDDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT)
 	$(CC) $(CFLAGS) -I$(HEADERDIR) -c $< -o $@
 
 .PHONY: all clean fclean re
+
+so $(NAME).so: $(BUILDDIR)/ $(OBJECTS)
+	$(CC) -shared $(BUILDDIR)/*.$(OBJEXT) -o $(NAME).so

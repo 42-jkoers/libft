@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 13:46:53 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 14:35:30 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/27 23:24:13 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ char	*ft_strdup(char *str)
 
 	size = ft_strlen(str) + 1;
 	dup = malloc(size * sizeof(char));
-	ft_memcpy(dup, str, size * sizeof(char));
+	if (dup != NULL)
+		ft_memcpy(dup, str, size * sizeof(char));
 	return (dup);
 }

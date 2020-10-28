@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:30:56 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 14:28:32 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/28 16:58:39 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ char		*ft_strtrim(char const *s1, char const *set)
 	while (ft_strchr((char *)set, s[len - chars_after]) != NULL)
 		chars_after++;
 	trimmed_len = len - chars_before - chars_after;
-	return (ft_substr(s, chars_before, trimmed_len));
+	return (ft_substr(s, chars_before, trimmed_len + 1));
 }

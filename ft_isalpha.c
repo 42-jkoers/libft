@@ -6,18 +6,17 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 17:50:39 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 13:40:23 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/28 11:44:49 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdbool.h>
 
-bool	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-		return (true);
+		return (1);
 	if (c >= 'a' && c <= 'z')
-		return (true);
-	return (false);
+		return (1);
+	return (0);
 }

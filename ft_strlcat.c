@@ -6,28 +6,19 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:44:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 13:47:49 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/28 14:21:47 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-size_t	ft_strlcat(char *dst, char *src, size_t maxlen)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t dstlen;
-	size_t srclen;
 
 	dstlen = ft_strlen(dst);
-	srclen = ft_strlen(src);
-	if (dstlen == maxlen)
-		return (maxlen + srclen);
-	if (srclen < maxlen - dstlen)
-		ft_memcpy(dst + dstlen, src, (srclen + 1) * sizeof(char));
-	else
-	{
-		ft_memcpy(dst + dstlen, src, (maxlen - dstlen - 1) * sizeof(char));
-		dst[maxlen - 1] = '\0';
-	}
-	return (dstlen + srclen);
+	if (size < dstlen)
+		return (size + ft_strlen((char *)src));
+	return (dstlen + ft_strlcpy(dst + dstlen, (char *)src, size - dstlen));
 }

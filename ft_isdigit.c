@@ -6,14 +6,13 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 14:48:40 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/26 17:54:22 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/28 11:44:39 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdbool.h>
 
-bool	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }

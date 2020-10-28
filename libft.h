@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:51:21 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 14:14:58 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/28 16:57:28 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,31 @@
 # include <stdbool.h>
 # include <stddef.h>
 
-void	ft_memset(void *s, uint8_t c, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, void *src, size_t n);
-void	*ft_memccpy(void *dest, void *src, uint8_t c, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memmove(void *dest, void *src, size_t n);
-void	*ft_memchr(void *s, uint8_t c, size_t n);
-int8_t	ft_strcmp(char *s1, char *s2);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *str1, const void *str2, size_t count);
+int		ft_strcmp(char *s1, char *s2);
 size_t	ft_strlen(char *str);
 size_t	ft_strlcpy(char *dst, char *src, size_t size);
-size_t	ft_strlcat(char *dst, char *src, size_t maxlen);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strchr(char *str, char c);
 char	*ft_strrchr(char *str, char c);
 char	*ft_strnstr(char *big, char *little, size_t len);
-int8_t	ft_strncmp(char *s1, char *s2, size_t n);
+int		ft_strncmp(char *s1, char *s2, size_t n);
 int		ft_atoi(char *str);
-bool	ft_isalpha(char c);
-bool	ft_isdigit(char c);
-bool	ft_isalnum(char c);
-bool	ft_isascii(char c);
-bool	ft_isprint(char c);
-char	ft_toupper(char c);
-char	ft_tolower(char c);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_strdup(char *str);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);

@@ -6,14 +6,13 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 23:06:17 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 10:50:55 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/28 11:44:57 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdbool.h>
 
-bool	ft_isprint(char c)
+int	ft_isprint(int c)
 {
 	return (c >= ' ' && c <= '~');
 }

@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 17:30:43 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/27 13:38:10 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/28 15:29:09 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,39 @@
 #include <stddef.h>
 #include <stdbool.h>
 
-static int64_t	ft_str_to_i64(char *str)
+static bool	ft_isspace(char c)
 {
-	int64_t	result;
+	if (c == ' ')
+		return (true);
+	if (c == '\n')
+		return (true);
+	if (c == '\t')
+		return (true);
+	if (c == '\v')
+		return (true);
+	if (c == '\f')
+		return (true);
+	if (c == '\r')
+		return (true);
+	return (false);
+}
+
+int			ft_atoi(char *str)
+{
+	int		result;
 	bool	is_negative;
 
-	if (!str || str[0] == '\0')
-		return (0);
-	while (!ft_isdigit(*str) && *str != '\0')
-	{
-		is_negative = *str == '-';
+	while (ft_isspace(*str))
 		str++;
-	}
-	if (*str == '\0')
-		return (0);
+	is_negative = *str == '-';
+	if (*str == '-' || *str == '+')
+		str++;
 	result = 0;
 	while (ft_isdigit(*str))
 	{
 		result *= 10;
-		result -= (int64_t)(*str - '0');
+		result -= (int)(*str - '0');
 		str++;
 	}
 	return (is_negative ? result : -result);
-}
-
-int				ft_atoi(char *str)
-{
-	return ((int)ft_str_to_i64(str));
 }
