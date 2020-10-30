@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 17:30:43 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/30 13:21:15 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/30 20:30:46 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ static bool	ft_isspace(char c)
 
 int			ft_atoi(char *str)
 {
-	long long	result;
-	bool		is_negative;
+	int		result;
+	bool	is_negative;
 
 	while (ft_isspace(*str))
 		str++;
@@ -45,8 +45,8 @@ int			ft_atoi(char *str)
 	while (ft_isdigit(*str))
 	{
 		result *= 10;
-		result -= (long long)(*str - '0');
+		result -= (int)(*str - '0');
 		str++;
 	}
-	return (is_negative ? (int)result : (int)(-result));
+	return (is_negative ? result : (-result));
 }

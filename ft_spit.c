@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:59:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/28 22:07:02 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/30 21:46:34 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,16 @@ static size_t	count_words(char *s, char c)
 	}
 }
 
+static void		free_strings(char **strings, size_t n)
+{
+	while (n > 0)
+	{
+		n--;
+		free(strings[n]);
+	}
+	free(strings);
+}
+
 static void		cpy_words(char *s, char c, char **split, size_t num_words)
 {
 	char	*prev_sep;
@@ -62,6 +72,11 @@ static void		cpy_words(char *s, char c, char **split, size_t num_words)
 			if (s - prev_sep > 1)
 			{
 				split[word_i] = ft_strndup(prev_sep + 1, s - prev_sep - 1);
+				if (split[word_i] == NULL)
+				{
+					free_strings(split, word_i);
+					return ;
+				}
 				word_i++;
 			}
 			prev_sep = s;
