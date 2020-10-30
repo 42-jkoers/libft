@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_lstadd_back.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 15:55:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/30 13:15:55 by jkoers        ########   odam.nl         */
+/*   Created: 2020/10/29 00:47:11 by jkoers        #+#    #+#                 */
+/*   Updated: 2020/10/29 21:36:48 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
-#include <stddef.h>
-#include <stdlib.h>
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	little_len;
-	char	*b;
-
-	b = (char *)big;
-	little_len = ft_strlen((char *)little);
-	if (little_len == 0)
-		return ((char *)big);
-	while (len >= little_len)
-	{
-		len--;
-		if (ft_memcmp(b, little, little_len) == 0)
-			return (b);
-		b++;
-	}
-	return (NULL);
+	if (*lst == NULL)
+		*lst = new;
+	else
+		(ft_lstlast(*lst))->next = new;
 }

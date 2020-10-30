@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_lstnew.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 15:55:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/30 13:15:55 by jkoers        ########   odam.nl         */
+/*   Created: 2020/10/29 00:48:59 by jkoers        #+#    #+#                 */
+/*   Updated: 2020/10/30 12:55:07 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
-#include <stddef.h>
 #include <stdlib.h>
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	little_len;
-	char	*b;
+	t_list *lst;
 
-	b = (char *)big;
-	little_len = ft_strlen((char *)little);
-	if (little_len == 0)
-		return ((char *)big);
-	while (len >= little_len)
-	{
-		len--;
-		if (ft_memcmp(b, little, little_len) == 0)
-			return (b);
-		b++;
-	}
-	return (NULL);
+	lst = malloc(sizeof(t_list));
+	if (lst == NULL)
+		return (NULL);
+	lst->content = content;
+	lst->next = NULL;
+	return (lst);
 }

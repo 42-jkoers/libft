@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   test.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 15:55:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/30 13:15:55 by jkoers        ########   odam.nl         */
+/*   Created: 2020/10/28 23:28:33 by jkoers        #+#    #+#                 */
+/*   Updated: 2020/10/28 23:43:43 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdint.h>
-#include <stddef.h>
 #include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+/*
+** Compile with -O0
+*/
+
+int	main(void)
 {
-	size_t	little_len;
-	char	*b;
+	unsigned long	a_9gib;
+	char			*x;
 
-	b = (char *)big;
-	little_len = ft_strlen((char *)little);
-	if (little_len == 0)
-		return ((char *)big);
-	while (len >= little_len)
+	a_9gib = 9663676416;
+	x = malloc(a_9gib);
+	if (x == NULL)
 	{
-		len--;
-		if (ft_memcmp(b, little, little_len) == 0)
-			return (b);
-		b++;
+		printf("malloc failed\n");
+		return (1);
 	}
-	return (NULL);
+	printf("malloc succeeded\n");
+	memset(x, 'A', a_9gib);
+	printf("Success\n");
+	return (0);
 }
