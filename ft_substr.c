@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 10:58:39 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/30 13:44:36 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/30 15:53:20 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	s_leftover;
 
 	s_leftover = ft_strlen((char *)s);
-	if (s_leftover <= (size_t)start)
+	if (s_leftover <= start)
 		return (ft_strdup(""));
-	s_leftover -= (size_t)start;
-	if ((size_t)s_leftover < len)
-		len = (size_t)s_leftover;
+	s_leftover -= start;
+	if (s_leftover < len)
+		len = s_leftover;
 	return (ft_strndup((char *)s + start, len));
 }
