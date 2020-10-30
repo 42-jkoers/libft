@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 10:58:39 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/28 16:57:44 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/30 13:44:36 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ static char	*ft_strndup(char *str, uint64_t len)
 
 char		*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	ssize_t	s_leftover;
+	size_t	s_leftover;
 
-	s_leftover = ft_strlen((char *)s) - start;
-	if (s_leftover <= 0)
+	s_leftover = ft_strlen((char *)s);
+	if (s_leftover <= (size_t)start)
 		return (ft_strdup(""));
+	s_leftover -= (size_t)start;
 	if ((size_t)s_leftover < len)
 		len = (size_t)s_leftover;
 	return (ft_strndup((char *)s + start, len));
