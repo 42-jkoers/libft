@@ -6,7 +6,7 @@
 #    By: joppe <joppe@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/23 17:53:14 by joppe         #+#    #+#                  #
-#    Updated: 2020/10/30 22:21:00 by jkoers        ########   odam.nl          #
+#    Updated: 2020/10/31 13:19:44 by jkoers        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,9 +32,11 @@ OBJECTS   		= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
 BONUSOBJECTS	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
 				  $(BONUSSOURCES:.$(SRCEXT)=.$(OBJEXT)))
 
-all: $(NAME)
+all: $(NAME).a
 
-$(NAME): $(BUILDDIR)/ $(OBJECTS)
+$(NAME): $(NAME).a
+
+$(NAME).a: $(BUILDDIR)/ $(OBJECTS)
 	ar -cq $(NAME).a $(BUILDDIR)/*.$(OBJEXT)
 
 bonus: $(BUILDDIR)/ $(OBJECTS) $(BONUSOBJECTS)
