@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:51:21 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/31 11:42:58 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/01 15:29:05 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,14 @@ void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(
 					t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/*
+** Custom functions
+*/
+
+size_t				ft_numlen_u(uint64_t num, uint64_t base);
+size_t				ft_numlen(int64_t num, uint64_t base);
+void				ft_numtobase(int64_t nbr, char *base);
+int64_t				ft_abs(int64_t num);
 
 #endif

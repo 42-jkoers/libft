@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 13:17:33 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/28 22:54:48 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/31 17:11:44 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static unsigned int	ft_abs(int nbr)
 	return (nbr < 0 ? -nbr : nbr);
 }
 
-static unsigned int	ft_numlen(int nbr)
+static unsigned int	ft_numlen1(int nbr)
 {
 	unsigned int digits;
 
@@ -41,7 +41,7 @@ static void			ft_itoa_buf(int n, char *buf)
 	unsigned int	len;
 	unsigned int	is_negative;
 
-	len = ft_numlen(n);
+	len = ft_numlen1(n);
 	is_negative = n < 0 ? 1 : 0;
 	if (is_negative)
 		buf[0] = '-';

@@ -5,59 +5,73 @@
 #                                                      +:+                     #
 #    By: joppe <joppe@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
-#    Created: 2020/08/23 17:53:14 by joppe         #+#    #+#                  #
-#    Updated: 2020/10/31 13:19:44 by jkoers        ########   odam.nl          #
+#    Created: 2020/08/23 17:53:14 by jkoers        #+#    #+#                  #
+#    Updated: 2020/10/31 23:50:04 by jkoers        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME      		= libft
+
 CC          	= gcc
 CFLAGS      	= -Wall -Wextra -Werror
+
 SRCEXT      	= c
-SRCDIR      	= .
-HEADERDIR		= .
+SRCDIR      	= src
+HEADERDIR		= include
 OBJEXT      	= o
 BUILDDIR    	= obj
-BONUSFILES		= ft_lst*
-MOREBONUS		= *_bonus
-SOURCES			= $(shell find '$(SRCDIR)/' -type f \
-					-name '*.$(SRCEXT)' -a \
-					-not -name '$(BONUSFILES).$(SRCEXT)' -a \
-					-not -name '$(MOREBONUS).$(SRCEXT)')
-BONUSSOURCES	= $(shell find '$(SRCDIR)/' -type f \
-					-name '$(BONUSFILES).$(SRCEXT)' -o \
-					-name '$(MOREBONUS).$(SRCEXT)')
-OBJECTS   		= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
-			   	  $(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
-BONUSOBJECTS	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
-				  $(BONUSSOURCES:.$(SRCEXT)=.$(OBJEXT)))
+BINDIR			= bin
 
-all: $(NAME).a
+UNITTEST		= test/test_ft_numlen.c
 
-$(NAME): $(NAME).a
+SOURCES     	= $(shell find '$(SRCDIR)/' -type f -name '*.$(SRCEXT)')
+OBJECTS     	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$\
+				  $(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
+INCLUDENAME		= $(subst lib,,$(NAME))
 
-$(NAME).a: $(BUILDDIR)/ $(OBJECTS)
-	ar -cq $(NAME).a $(BUILDDIR)/*.$(OBJEXT)
+all: static
 
-bonus: $(BUILDDIR)/ $(OBJECTS) $(BONUSOBJECTS)
-	ar -cq $(NAME).a $(OBJECTS) $(BONUSOBJECTS)
+$(NAME): static
+
+help:
+	@echo "Choose from:"
+	@echo "so"
+	@echo "static"
+	@echo "tester"
+
+so: $(BINDIR)/$(NAME).so
+
+$(BINDIR)/$(NAME).so: $(BUILDDIR)/ $(BINDIR)/ $(OBJECTS)
+	$(CC) -shared $(BUILDDIR)/*.$(OBJEXT) -o $(BINDIR)/$(NAME).so
+
+static: $(BINDIR)/$(NAME).a
+
+$(BINDIR)/$(NAME).a: $(BUILDDIR)/ $(BINDIR)/ $(OBJECTS)
+	ar -cr $(BINDIR)/$(NAME).a $(BUILDDIR)/*.$(OBJEXT)
+
+tester: static
+	$(CC) $(CFLAGS) $(UNITTEST) -Iinclude/ -Lbin/ -lft -o tester
+
+$(TESTNAME): $(BUILDDIR)/ $(BINDIR)/ $(TESTERDIR)/ static $(TESTSOURCES)
+	$(CC) $(CFLAGS) $(TESTSOURCES) -I$(HEADERDIR)/ -L$(BINDIR)/ -o $(TESTNAME)$\
+	 -l$(INCLUDENAME)
 
 clean:
 	/bin/rm -rf $(BUILDDIR)/
 
 fclean: clean
-	/bin/rm -f $(NAME).a
-	/bin/rm -f $(NAME).so
+	/bin/rm -f $(TESTNAME)
+	/bin/rm -rf $(BINDIR)/
 
 re: fclean all
 
 $(BUILDDIR)/:
-	mkdir -p $(BUILDDIR)
+	@mkdir -p $(BUILDDIR)
+
+$(BINDIR)/:
+	@mkdir -p $(BINDIR)
 
 $(BUILDDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT)
-	$(CC) $(CFLAGS) -I$(HEADERDIR) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(HEADERDIR)/ -c $< -o $@
 
-so: $(BUILDDIR)/ $(OBJECTS)
-	$(CC) -shared $(BUILDDIR)/*.$(OBJEXT) -o $(NAME).so
-
-.PHONY: all clean fclean re so bonus
+.PHONY: all help so static tester clean fclean re

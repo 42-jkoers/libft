@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 12:26:18 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/28 22:46:11 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/10/31 17:11:55 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static unsigned int	ft_abs(int nbr)
 	return (nbr < 0 ? -nbr : nbr);
 }
 
-static unsigned int	ft_numlen(int nbr)
+static unsigned int	ft_numlen1(int nbr)
 {
 	unsigned int digits;
 
@@ -41,7 +41,7 @@ char				*ft_itoa(int n)
 	unsigned int	len;
 	unsigned int	is_negative;
 
-	len = ft_numlen(n);
+	len = ft_numlen1(n);
 	res = malloc((len + 1) * sizeof(char));
 	if (res == NULL)
 		return (NULL);
