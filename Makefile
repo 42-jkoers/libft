@@ -6,7 +6,7 @@
 #    By: joppe <joppe@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/23 17:53:14 by joppe         #+#    #+#                  #
-#    Updated: 2020/10/31 13:19:44 by jkoers        ########   odam.nl          #
+#    Updated: 2020/11/01 15:37:13 by jkoers        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,27 +20,24 @@ OBJEXT      	= o
 BUILDDIR    	= obj
 BONUSFILES		= ft_lst*
 MOREBONUS		= *_bonus
-SOURCES			= $(shell find '$(SRCDIR)/' -type f \
-					-name '*.$(SRCEXT)' -a \
-					-not -name '$(BONUSFILES).$(SRCEXT)' -a \
-					-not -name '$(MOREBONUS).$(SRCEXT)')
-BONUSSOURCES	= $(shell find '$(SRCDIR)/' -type f \
-					-name '$(BONUSFILES).$(SRCEXT)' -o \
-					-name '$(MOREBONUS).$(SRCEXT)')
-OBJECTS   		= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
-			   	  $(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
-BONUSOBJECTS	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
-				  $(BONUSSOURCES:.$(SRCEXT)=.$(OBJEXT)))
+SOURCES			= $(shell find '$(SRCDIR)/' -type f -name '*.$(SRCEXT)' -a $\
+-not -name '$(BONUSFILES).$(SRCEXT)' -a -not -name '$(MOREBONUS).$(SRCEXT)')
+BONUSSOURCES	= $(shell find '$(SRCDIR)/' -type f -name $\
+'$(BONUSFILES).$(SRCEXT)' -o -name '$(MOREBONUS).$(SRCEXT)')
+OBJECTS   		= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$\
+$(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
+BONUSOBJECTS	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$\
+$(BONUSSOURCES:.$(SRCEXT)=.$(OBJEXT)))
 
 all: $(NAME).a
 
 $(NAME): $(NAME).a
 
 $(NAME).a: $(BUILDDIR)/ $(OBJECTS)
-	ar -cq $(NAME).a $(BUILDDIR)/*.$(OBJEXT)
+	ar -cr $(NAME).a $(BUILDDIR)/*.$(OBJEXT)
 
 bonus: $(BUILDDIR)/ $(OBJECTS) $(BONUSOBJECTS)
-	ar -cq $(NAME).a $(OBJECTS) $(BONUSOBJECTS)
+	ar -cr $(NAME).a $(OBJECTS) $(BONUSOBJECTS)
 
 clean:
 	/bin/rm -rf $(BUILDDIR)/
