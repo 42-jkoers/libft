@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_abs.c                                           :+:    :+:            */
+/*   test_ft_numtobase.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/01 15:18:25 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/01 19:30:17 by jkoers        ########   odam.nl         */
+/*   Created: 2020/11/01 18:40:38 by jkoers        #+#    #+#                 */
+/*   Updated: 2020/11/01 18:58:43 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-
-long	ft_abs(long num)
+int	main(void)
 {
-	return (num < 0 ? -num : num);
+	char *num;
+
+	num = ft_numtobase(255, "01");
+	ft_putstr_fd(num, 1);
+	return (0);
 }

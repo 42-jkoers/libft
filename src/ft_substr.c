@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 10:58:39 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/30 15:53:20 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/01 19:23:42 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-static char	*ft_strndup(char *str, uint64_t len)
+static char	*ft_strndup(char *str, unsigned long len)
 {
 	char *dup;
 

@@ -6,7 +6,7 @@
 #    By: joppe <joppe@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/23 17:53:14 by jkoers        #+#    #+#                  #
-#    Updated: 2020/10/31 23:50:04 by jkoers        ########   odam.nl          #
+#    Updated: 2020/11/01 18:54:52 by jkoers        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJEXT      	= o
 BUILDDIR    	= obj
 BINDIR			= bin
 
-UNITTEST		= test/test_ft_numlen.c
+UNITTEST		= test/test_ft_numtobase.c
 
 SOURCES     	= $(shell find '$(SRCDIR)/' -type f -name '*.$(SRCEXT)')
 OBJECTS     	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$\

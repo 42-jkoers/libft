@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:51:21 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/01 15:29:05 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/01 19:23:50 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ t_list				*ft_lstmap(
 ** Custom functions
 */
 
-size_t				ft_numlen_u(uint64_t num, uint64_t base);
-size_t				ft_numlen(int64_t num, uint64_t base);
-void				ft_numtobase(int64_t nbr, char *base);
-int64_t				ft_abs(int64_t num);
+size_t				ft_numlen_u(unsigned long num, unsigned long base);
+size_t				ft_numlen(long num, unsigned long base);
+char				*ft_numtobase(long num, char *base);
+long				ft_abs(long num);
 
 #endif

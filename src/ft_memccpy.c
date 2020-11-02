@@ -6,12 +6,11 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:44:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/28 14:11:21 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/01 19:38:40 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
 #include <stdlib.h>
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)

@@ -6,12 +6,11 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 15:55:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/30 13:15:55 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/01 19:32:17 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
 #include <stddef.h>
 #include <stdlib.h>
 

@@ -6,14 +6,14 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 15:16:21 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/31 16:37:43 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/01 19:23:42 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-size_t	ft_numlen_u(uint64_t num, uint64_t base)
+size_t	ft_numlen_u(unsigned long num, unsigned long base)
 {
 	size_t digits;
 

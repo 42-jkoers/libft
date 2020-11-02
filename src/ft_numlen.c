@@ -6,28 +6,28 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 15:16:21 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/01 15:29:47 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/01 19:23:50 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-size_t	ft_numlen(int64_t num, uint64_t base)
+size_t	ft_numlen(long num, unsigned long base)
 {
 	size_t	len;
-	int64_t	divider;
+	long	divider;
 
 	if (num == 0)
 		return (1);
 	len = 0;
 	if (num < 0)
 	{
-		divider = -((int64_t)base_n);
+		divider = -((long)base);
 		len += 1;
 	}
 	else
-		divider = (int64_t)base;
+		divider = (long)base;
 	while (num != 0)
 	{
 		num /= divider;

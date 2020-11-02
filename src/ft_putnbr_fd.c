@@ -6,42 +6,19 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 13:17:33 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/31 17:11:44 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/01 19:31:48 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
-#include <stdlib.h>
-
-static unsigned int	ft_abs(int nbr)
-{
-	return (nbr < 0 ? -nbr : nbr);
-}
-
-static unsigned int	ft_numlen1(int nbr)
-{
-	unsigned int digits;
-
-	if (nbr == 0)
-		return (1);
-	digits = 0;
-	if (nbr < 0)
-		digits++;
-	while (nbr != 0)
-	{
-		nbr /= 10;
-		digits++;
-	}
-	return (digits);
-}
 
 static void			ft_itoa_buf(int n, char *buf)
 {
-	unsigned int	len;
-	unsigned int	is_negative;
+	unsigned long	len;
+	unsigned long	is_negative;
 
-	len = ft_numlen1(n);
+	len = (unsigned long)ft_numlen(n, 10);
 	is_negative = n < 0 ? 1 : 0;
 	if (is_negative)
 		buf[0] = '-';
