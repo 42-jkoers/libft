@@ -6,14 +6,14 @@
 #    By: joppe <joppe@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/23 17:53:14 by jkoers        #+#    #+#                  #
-#    Updated: 2020/11/01 18:54:52 by jkoers        ########   odam.nl          #
+#    Updated: 2020/11/02 12:35:30 by jkoers        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME      		= libft
 
 CC          	= gcc
-CFLAGS      	= -Wall -Wextra -Werror
+CFLAGS      	= -Wall -Wextra -Werror -Wconversion
 
 SRCEXT      	= c
 SRCDIR      	= src

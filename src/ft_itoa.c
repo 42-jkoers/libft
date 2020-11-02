@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 12:26:18 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/01 18:57:08 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/02 12:35:49 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char				*ft_itoa(int n)
 	unsigned int	len;
 	unsigned int	is_negative;
 
-	len = ft_numlen(n, 10);
+	len = (unsigned int)ft_numlen(n, 10);
 	res = malloc((len + 1) * sizeof(char));
 	if (res == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:30:56 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/10/28 16:58:39 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/02 12:42:12 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 char		*ft_strtrim(char const *s1, char const *set)
 {
-	char	*s;
-	size_t	chars_before;
-	size_t	chars_after;
-	size_t	len;
-	size_t	trimmed_len;
+	char			*s;
+	unsigned int	chars_before;
+	unsigned int	chars_after;
+	size_t			len;
+	size_t			trimmed_len;
 
 	s = (char *)s1;
 	chars_before = 0;
