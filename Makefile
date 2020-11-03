@@ -6,7 +6,7 @@
 #    By: joppe <joppe@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/23 17:53:14 by joppe         #+#    #+#                  #
-#    Updated: 2020/11/01 15:37:13 by jkoers        ########   odam.nl          #
+#    Updated: 2020/11/03 01:10:47 by jkoers        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,52 @@ OBJEXT      	= o
 BUILDDIR    	= obj
 BONUSFILES		= ft_lst*
 MOREBONUS		= *_bonus
-SOURCES			= $(shell find '$(SRCDIR)/' -type f -name '*.$(SRCEXT)' -a $\
--not -name '$(BONUSFILES).$(SRCEXT)' -a -not -name '$(MOREBONUS).$(SRCEXT)')
-BONUSSOURCES	= $(shell find '$(SRCDIR)/' -type f -name $\
-'$(BONUSFILES).$(SRCEXT)' -o -name '$(MOREBONUS).$(SRCEXT)')
+SOURCES =$\
+ft_atoi.c$\
+ft_bzero.c$\
+ft_calloc.c$\
+ft_isalnum.c$\
+ft_isalpha.c$\
+ft_isascii.c$\
+ft_isdigit.c$\
+ft_isprint.c$\
+ft_itoa.c$\
+ft_memccpy.c$\
+ft_memchr.c$\
+ft_memcmp.c$\
+ft_memcpy.c$\
+ft_memmove.c$\
+ft_memset.c$\
+ft_putchar_fd.c$\
+ft_putendl_fd.c$\
+ft_putnbr_fd.c$\
+ft_putstr_fd.c$\
+ft_split.c$\
+ft_strchr.c$\
+ft_strcmp.c$\
+ft_strdup.c$\
+ft_strjoin.c$\
+ft_strlcat.c$\
+ft_strlcpy.c$\
+ft_strlen.c$\
+ft_strmapi.c$\
+ft_strncmp.c$\
+ft_strnstr.c$\
+ft_strrchr.c$\
+ft_strtrim.c$\
+ft_substr.c$\
+ft_tolower.c$\
+ft_toupper.c$\
+BONUSSOURCES =$\
+ft_lstadd_back.c$\
+ft_lstadd_front.c$\
+ft_lstclear.c$\
+ft_lstdelone.c$\
+ft_lstiter.c$\
+ft_lstlast.c$\
+ft_lstmap.c$\
+ft_lstnew.c$\
+ft_lstsize.c$\
 OBJECTS   		= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$\
 $(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
 BONUSOBJECTS	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$\
