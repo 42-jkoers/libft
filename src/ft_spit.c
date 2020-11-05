@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:59:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/02 12:40:52 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/03 01:22:03 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,6 @@
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdbool.h>
-
-static char		*ft_strndup(char *str, size_t len)
-{
-	char *dup;
-
-	dup = malloc((len + 1) * sizeof(char));
-	if (dup == NULL)
-		return (NULL);
-	ft_memcpy(dup, str, len * sizeof(char));
-	dup[len] = '\0';
-	return (dup);
-}
 
 static size_t	count_words(char *s, char c)
 {
