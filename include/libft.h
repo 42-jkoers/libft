@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:51:21 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/02 12:32:52 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/05 17:02:15 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,21 @@ t_list				*ft_lstmap(
 long				ft_abs(long num);
 size_t				ft_numlen(long num, unsigned long base);
 size_t				ft_numlen_u(unsigned long num, unsigned long base);
+char				*ft_numtohexstr_u(unsigned long num, bool lowercase);
 char				*ft_numtobase(long num, char *base);
 char				*ft_numtobase_u(unsigned long num, char *base);
 char				*ft_numtostr(long num);
 char				*ft_numtostr_u(unsigned long num);
-
-
+char				*ft_strndup(char *str, size_t len);
+char				*ft_strcat(char *dest, char *src);
+char				*ft_strncat(char *dest, char *src, size_t nb);
+char				*ft_strcpy(char *dest, char *src);
+char				*ft_strncpy(char *dest, char *src, size_t n);
+void				ft_strtolower(char *s);
+void				ft_strtoupper(char *s);
+void				ft_lstpush_back(t_list **lst, void *content);
+void				ft_lstpush_front(t_list **lst, void *content);
+void				ft_putstr(char *s);
+bool				ft_includes(char *str, char c);
 
 #endif
