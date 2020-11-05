@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 13:17:33 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/01 19:31:48 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/05 15:44:36 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ static void			ft_itoa_buf(int n, char *buf)
 	unsigned long	is_negative;
 
 	len = (unsigned long)ft_numlen(n, 10);
-	is_negative = n < 0 ? 1 : 0;
+	is_negative = (unsigned long)(n < 0 ? 1 : 0);
 	if (is_negative)
 		buf[0] = '-';
 	buf[len] = '\0';
 	while (len > is_negative)
 	{
 		len--;
-		buf[len] = (char)ft_abs(n % 10) + '0';
+		buf[len] = (char)(ft_abs(n % 10) + '0');
 		n /= 10;
 	}
 }

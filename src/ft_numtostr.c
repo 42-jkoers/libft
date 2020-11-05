@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 00:20:00 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/02 12:32:16 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/03 01:33:53 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_numtostr(long num)
 	while (numlen > 0)
 	{
 		numlen--;
-		result[numlen] = (char)(num % 10) + '0';
+		result[numlen] = (char)((num % 10) + '0');
 		num /= 10;
 	}
 	return (result);
