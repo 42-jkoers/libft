@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 00:20:00 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/03 01:33:53 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/08 01:55:45 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,23 @@
 
 char	*ft_numtostr(long num)
 {
+	char	*res;
+	size_t	stop_at;
 	size_t	numlen;
-	char	*result;
 
 	numlen = ft_numlen(num, 10);
-	result = malloc((numlen + 1) * sizeof(char));
-	if (result == NULL)
+	res = malloc((numlen + 1) * sizeof(char));
+	if (res == NULL)
 		return (NULL);
-	result[numlen] = '\0';
-	while (numlen > 0)
+	stop_at = num < 0 ? 1 : 0;
+	if (num < 0)
+		res[0] = '-';
+	res[numlen] = '\0';
+	while (numlen > stop_at)
 	{
 		numlen--;
-		result[numlen] = (char)((num % 10) + '0');
+		res[numlen] = (char)ft_abs(num % 10) + '0';
 		num /= 10;
 	}
-	return (result);
+	return (res);
 }

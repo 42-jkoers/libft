@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_atoi.c                                          :+:    :+:            */
+/*   ft_isspace.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 17:30:43 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/08 15:55:45 by jkoers        ########   odam.nl         */
+/*   Created: 2020/11/08 15:28:43 by jkoers        #+#    #+#                 */
+/*   Updated: 2020/11/08 15:30:52 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdbool.h>
 
-int			ft_atoi(char *str)
+int	ft_isspace(char c)
 {
-	int		result;
-	bool	is_negative;
-
-	while (ft_isspace(*str))
-		str++;
-	is_negative = *str == '-';
-	if (*str == '-' || *str == '+')
-		str++;
-	result = 0;
-	while (ft_isdigit(*str))
-	{
-		result *= 10;
-		result -= (int)(*str - '0');
-		str++;
-	}
-	return (is_negative ? result : (-result));
+	if (c == ' ')
+		return (1);
+	if (c == '\n')
+		return (1);
+	if (c == '\t')
+		return (1);
+	if (c == '\v')
+		return (1);
+	if (c == '\f')
+		return (1);
+	if (c == '\r')
+		return (1);
+	return (0);
 }

@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_atoi.c                                          :+:    :+:            */
+/*   test_ft_numtostr_pad.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 17:30:43 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/08 15:55:45 by jkoers        ########   odam.nl         */
+/*   Created: 2020/11/01 18:40:38 by jkoers        #+#    #+#                 */
+/*   Updated: 2020/11/09 00:15:03 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdbool.h>
+#include <stdio.h>
 
-int			ft_atoi(char *str)
+int	main(void)
 {
-	int		result;
-	bool	is_negative;
-
-	while (ft_isspace(*str))
-		str++;
-	is_negative = *str == '-';
-	if (*str == '-' || *str == '+')
-		str++;
-	result = 0;
-	while (ft_isdigit(*str))
-	{
-		result *= 10;
-		result -= (int)(*str - '0');
-		str++;
-	}
-	return (is_negative ? result : (-result));
+	ft_putstr(ft_numtostr_pad(-42, 5));
+	return (0);
 }

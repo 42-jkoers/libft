@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_atoi.c                                          :+:    :+:            */
+/*   ft_numtostr_pad.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 17:30:43 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/08 15:55:45 by jkoers        ########   odam.nl         */
+/*   Created: 2020/11/01 00:20:00 by jkoers        #+#    #+#                 */
+/*   Updated: 2020/11/09 15:14:07 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
-#include <stdbool.h>
+#include <stdlib.h>
 
-int			ft_atoi(char *str)
+char	*ft_numtostr_pad(long num, size_t min_len)
 {
-	int		result;
-	bool	is_negative;
+	char	*res;
+	size_t	stop_at;
+	size_t	numlen;
 
-	while (ft_isspace(*str))
-		str++;
-	is_negative = *str == '-';
-	if (*str == '-' || *str == '+')
-		str++;
-	result = 0;
-	while (ft_isdigit(*str))
+	numlen = ft_max_u(ft_numlen(num, 10), min_len);
+	res = malloc((numlen + 1) * sizeof(char));
+	if (res == NULL)
+		return (NULL);
+	if (num < 0)
+		res[0] = '-';
+	res[numlen] = '\0';
+	stop_at = num < 0 ? 1 : 0;
+	while (numlen > stop_at)
 	{
-		result *= 10;
-		result -= (int)(*str - '0');
-		str++;
+		numlen--;
+		res[numlen] = (char)ft_abs(num % 10) + '0';
+		num /= 10;
 	}
-	return (is_negative ? result : (-result));
+	return (res);
 }

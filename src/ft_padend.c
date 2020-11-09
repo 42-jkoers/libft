@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_atoi.c                                          :+:    :+:            */
+/*   ft_padend.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 17:30:43 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/08 15:55:45 by jkoers        ########   odam.nl         */
+/*   Created: 2020/11/08 15:05:45 by jkoers        #+#    #+#                 */
+/*   Updated: 2020/11/08 15:56:22 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 #include <stddef.h>
-#include <stdbool.h>
 
-int			ft_atoi(char *str)
+char	*ft_padend(char *str, size_t target_len, char pad)
 {
-	int		result;
-	bool	is_negative;
+	char	*res;
+	size_t	strlen;
 
-	while (ft_isspace(*str))
-		str++;
-	is_negative = *str == '-';
-	if (*str == '-' || *str == '+')
-		str++;
-	result = 0;
-	while (ft_isdigit(*str))
-	{
-		result *= 10;
-		result -= (int)(*str - '0');
-		str++;
-	}
-	return (is_negative ? result : (-result));
+	strlen = ft_strlen(str);
+	if (strlen > target_len)
+		return (ft_strdup(str));
+	res = malloc((target_len + 1) * sizeof(char));
+	ft_memcpy(res, str, strlen * sizeof(char));
+	ft_memset(res + strlen, pad, (target_len - strlen) * sizeof(char));
+	res[target_len] = '\0';
+	return (res);
 }
