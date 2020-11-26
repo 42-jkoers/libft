@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 17:30:43 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/08 15:32:20 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/26 17:13:31 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 long	ft_strtonum(char *str)
 {
-	long		result;
+	long	result;
 	bool	is_negative;
 
 	while (ft_isspace(*str))

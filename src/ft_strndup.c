@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 01:20:37 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/07 17:18:21 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/26 17:14:16 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 char		*ft_strndup(char *str, size_t len)
 {
-	char *dup;
-	size_t str_len;
+	char	*dup;
+	size_t	str_len;
 
 	str_len = ft_strlen(str);
 	if (str_len < len)

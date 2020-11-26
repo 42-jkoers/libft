@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:51:21 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/22 23:00:46 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/26 17:12:07 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,5 @@ long				ft_strtonum(char *str);
 unsigned long		ft_strtonum_u(char *str);
 unsigned long		ft_max_u(unsigned long a, unsigned long b);
 long				ft_max(long a, long b);
-
-
 
 #endif

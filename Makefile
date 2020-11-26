@@ -6,7 +6,7 @@
 #    By: joppe <joppe@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/23 17:53:14 by jkoers        #+#    #+#                  #
-#    Updated: 2020/11/09 00:09:47 by jkoers        ########   odam.nl          #
+#    Updated: 2020/11/26 17:14:51 by jkoers        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ INCLUDENAME		= $(subst lib,,$(NAME))
 ##
 
 all: $(BINDIR)/$(NAME).a
- 
+
 $(NAME): $(BINDIR)/$(NAME).a
 
 ##
