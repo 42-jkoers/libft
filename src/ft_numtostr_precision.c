@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_numtohexstr_u.c                                 :+:    :+:            */
+/*   ft_numtostr_precision.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 00:20:00 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/12 00:06:38 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/26 17:10:24 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
-char	*ft_numtohexstr_u(unsigned long num, bool lowercase, bool prefix)
+char	*ft_numtostr_precision(long num, size_t min_len)
 {
-	size_t		numlen;
-	char		*result;
-	const char	upper[] = "0123456789ABCDEF";
-	const char	lower[] = "0123456789abcdef";
+	char	*res;
+	size_t	stop_at;
+	size_t	numlen;
 
-	numlen = ft_numlen_u(num, 16);
-	result = malloc((numlen + (prefix ? 3 : 1)) * sizeof(char));
-	if (result == NULL)
+	if (num < 0)
+		min_len += 1;
+	numlen = ft_max_u(ft_numlen(num, 10), min_len);
+	res = malloc((numlen + 1) * sizeof(char));
+	if (res == NULL)
 		return (NULL);
-	if (prefix)
-		ft_strncpy(result, "0x", 2);
-	result[numlen] = '\0';
-	while (numlen > 0)
+	if (num < 0)
+		res[0] = '-';
+	res[numlen] = '\0';
+	stop_at = num < 0 ? 1 : 0;
+	while (numlen > stop_at)
 	{
 		numlen--;
-		result[numlen + (prefix ? 2 : 0)] = \
-			lowercase ? lower[num % 16] : upper[num % 16];
-		num /= 16;
+		res[numlen] = (char)ft_abs(num % 10) + '0';
+		num /= 10;
 	}
-	return (result);
+	return (res);
 }

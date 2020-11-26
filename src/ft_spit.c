@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:59:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/03 01:22:03 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/26 17:09:04 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,20 @@
 
 static size_t	count_words(char *s, char c)
 {
-	char	*prev_sep;
+	char	*sep;
 	size_t	words;
 
-	prev_sep = s - 1;
+	sep = s - 1;
 	words = 0;
 	while (true)
 	{
 		if (*s == c || *s == '\0')
 		{
-			if (s - prev_sep > 1)
+			if (s - sep > 1)
 				words++;
 			if (*s == '\0')
 				return (words);
-			prev_sep = s;
+			sep = s;
 		}
 		s++;
 	}
@@ -48,18 +48,18 @@ static void		free_strings(char **strings, size_t n)
 
 static void		cpy_words(char *s, char c, char **split, size_t num_words)
 {
-	char	*prev_sep;
+	char	*sep;
 	size_t	word_i;
 
-	prev_sep = s - 1;
+	sep = s - 1;
 	word_i = 0;
 	while (word_i < num_words)
 	{
 		if (*s == c || *s == '\0')
 		{
-			if (s - prev_sep > 1)
+			if (s - sep > 1)
 			{
-				split[word_i] = ft_strndup(prev_sep + 1, (size_t)(s - prev_sep - 1));
+				split[word_i] = ft_strndup(sep + 1, (size_t)(s - sep - 1));
 				if (split[word_i] == NULL)
 				{
 					free_strings(split, word_i);
@@ -67,7 +67,7 @@ static void		cpy_words(char *s, char c, char **split, size_t num_words)
 				}
 				word_i++;
 			}
-			prev_sep = s;
+			sep = s;
 		}
 		s++;
 	}

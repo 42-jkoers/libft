@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:51:21 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/09 15:08:25 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/22 23:00:46 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char				*ft_strdup(char *str);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
-char				**ft_split(char const *s, char c);
+char				**ft_speciallit(char const *s, char c);
 char				*ft_itoa(int n);
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -81,12 +81,16 @@ size_t				ft_numlen(long num, unsigned long base);
 size_t				ft_numlen_u(unsigned long num, unsigned long base);
 char				*ft_numtostr(long num);
 char				*ft_numtostr_u(unsigned long num);
-char				*ft_numtohexstr_u(unsigned long num, bool lowercase);
+char				*ft_numtohexstr_u(
+					unsigned long num, bool lowercase, bool prefix);
+char				*ft_numtohexstr_precision_u(unsigned long num, \
+					bool lowercase, bool prefix, size_t min_len);
 char				*ft_numtobase(long num, char *base);
 char				*ft_numtobase_u(unsigned long num, char *base);
-char				*ft_numtostr_pad_u(unsigned long num, size_t min_len);
-char				*ft_numtostr_pad(long num, size_t min_len);
+char				*ft_numtostr_precision_u(unsigned long num, size_t min_len);
+char				*ft_numtostr_precision(long num, size_t min_len);
 char				*ft_strndup(char *str, size_t len);
+char				*ft_strndup_unsafe(char *str, size_t len);
 char				*ft_strcat(char *dest, char *src);
 char				*ft_strncat(char *dest, char *src, size_t nb);
 char				*ft_strcpy(char *dest, char *src);
@@ -98,11 +102,14 @@ void				ft_lstpush_front(t_list **lst, void *content);
 void				ft_putstr(char *s);
 bool				ft_includes(char *str, char c);
 void				ft_strset(char *str, char c, size_t n);
-char				*ft_padend(char *str, size_t target_len, char pad);
-char				*ft_padstart(char *str, size_t target_len, char pad);
+void				ft_padend(char **str, size_t target_len, char pad);
+void				ft_padstart(char **str, size_t target_len, char pad);
 int					ft_isspace(char c);
 long				ft_strtonum(char *str);
 unsigned long		ft_strtonum_u(char *str);
 unsigned long		ft_max_u(unsigned long a, unsigned long b);
+long				ft_max(long a, long b);
+
+
 
 #endif

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_numtostr_pad_u.c                                :+:    :+:            */
+/*   ft_numtostr_precision_u.c                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 00:20:00 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/09 00:20:30 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/11/26 17:10:01 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-char	*ft_numtostr_pad_u(unsigned long num, size_t min_len)
+char	*ft_numtostr_precision_u(unsigned long num, size_t min_len)
 {
 	char	*res;
 	size_t	numlen;

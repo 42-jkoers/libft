@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   test_ft_numtostr_pad.c                             :+:    :+:            */
+/*   ft_max.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/01 18:40:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/11/09 00:15:03 by jkoers        ########   odam.nl         */
+/*   Created: 2020/11/16 16:28:20 by jkoers        #+#    #+#                 */
+/*   Updated: 2020/11/16 16:28:27 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
-
-int	main(void)
+long	ft_max(long a, long b)
 {
-	ft_putstr(ft_numtostr_pad(-42, 5));
-	return (0);
+	return (a > b ? a : b);
 }
