@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:51:21 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/12/22 23:27:49 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/12/23 12:42:53 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,6 @@ unsigned long		ft_strtonum_u(char *str);
 unsigned long		ft_max_u(unsigned long a, unsigned long b);
 long				ft_max(long a, long b);
 int					get_next_line(int fd, char **line);
+char				**ft_split_or(const char *s, const char *spitters);
 
 #endif
