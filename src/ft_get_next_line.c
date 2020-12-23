@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/01 13:31:41 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/12/23 12:17:15 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/12/23 13:10:21 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static int	join(t_buf **fd, size_t total_size, char **line)
 **             -1: malloc error
 */
 
-int			get_next_line(const int fd, char **line)
+int			ft_get_next_line(const int fd, char **line)
 {
 	static t_buf	*fds[FD_SETSIZE];
 	t_buf			*cur;
