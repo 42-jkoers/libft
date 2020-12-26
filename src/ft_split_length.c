@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_split_len.c                                     :+:    :+:            */
+/*   ft_split_length.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:59:38 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/12/26 17:13:49 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/12/26 19:30:05 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,7 @@ static void		cpy_words(char *s, char c, char **split, size_t num_words)
 				split[word_i] = ft_strndup_unsafe(
 					sep + 1, (size_t)(s - sep - 1));
 				if (split[word_i] == NULL)
-				{
-					ft_free_2d(split, word_i);
-					return ;
-				}
+					return (ft_free_2d((void **)split, word_i));
 				word_i++;
 			}
 			sep = s;
