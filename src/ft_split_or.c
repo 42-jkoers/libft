@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/22 22:18:54 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/12/23 12:43:10 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/12/25 18:13:21 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void		free_strings(char **strings, size_t n)
 }
 
 static void		cpy_words(\
-	char *s, char *splitters, char **split, size_t num_words)
+char *s, char *splitters, char **split, size_t num_words)
 {
 	char	*sep;
 	size_t	word_i;
@@ -76,7 +76,6 @@ static void		cpy_words(\
 	}
 	split[num_words] = NULL;
 }
-
 
 /*
 ** @description split string s in array of strings, followed by a NULL
