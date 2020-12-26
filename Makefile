@@ -6,7 +6,7 @@
 #    By: joppe <joppe@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/23 17:53:14 by jkoers        #+#    #+#                  #
-#    Updated: 2020/12/23 12:45:09 by jkoers        ########   odam.nl          #
+#    Updated: 2020/12/26 13:38:01 by jkoers        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,12 +24,15 @@ BINDIR			= bin
 HEADER			= include/libft.h include/internal.h
 
 TESTNAME		= testor
-UNITTEST		= test/test_ft_numtostr_pad.c
+UNITTEST		= test/test_ft_split_file.c
 
-SOURCES 		= $(SRCDIR)/ft_abs.c \
+SOURCES     	= $(SRCDIR)/ft_abs.c \
+				  $(SRCDIR)/ft_arr_voidp.c \
+				  $(SRCDIR)/ft_arr_voidp2.c \
 				  $(SRCDIR)/ft_atoi.c \
 				  $(SRCDIR)/ft_bzero.c \
 				  $(SRCDIR)/ft_calloc.c \
+				  $(SRCDIR)/ft_free_2d.c \
 				  $(SRCDIR)/ft_get_next_line.c \
 				  $(SRCDIR)/ft_get_next_line2.c \
 				  $(SRCDIR)/ft_includes.c \
@@ -50,6 +53,7 @@ SOURCES 		= $(SRCDIR)/ft_abs.c \
 				  $(SRCDIR)/ft_lstnew.c \
 				  $(SRCDIR)/ft_lstpush_back.c \
 				  $(SRCDIR)/ft_lstpush_front.c \
+				  $(SRCDIR)/ft_lstshift.c \
 				  $(SRCDIR)/ft_lstsize.c \
 				  $(SRCDIR)/ft_max.c \
 				  $(SRCDIR)/ft_max_u.c \
@@ -57,6 +61,7 @@ SOURCES 		= $(SRCDIR)/ft_abs.c \
 				  $(SRCDIR)/ft_memchr.c \
 				  $(SRCDIR)/ft_memcmp.c \
 				  $(SRCDIR)/ft_memcpy.c \
+				  $(SRCDIR)/ft_memdup.c \
 				  $(SRCDIR)/ft_memmove.c \
 				  $(SRCDIR)/ft_memset.c \
 				  $(SRCDIR)/ft_numlen.c \
@@ -76,8 +81,10 @@ SOURCES 		= $(SRCDIR)/ft_abs.c \
 				  $(SRCDIR)/ft_putnbr_fd.c \
 				  $(SRCDIR)/ft_putstr.c \
 				  $(SRCDIR)/ft_putstr_fd.c \
+				  $(SRCDIR)/ft_realloc.c \
 				  $(SRCDIR)/ft_spit.c \
- 				  $(SRCDIR)/ft_split_or.c \
+				  $(SRCDIR)/ft_split_file.c \
+				  $(SRCDIR)/ft_split_or.c \
 				  $(SRCDIR)/ft_strcat.c \
 				  $(SRCDIR)/ft_strchr.c \
 				  $(SRCDIR)/ft_strcmp.c \
@@ -110,7 +117,8 @@ INCLUDENAME		= $(subst lib,,$(NAME))
 
 ##
 
-all: $(BINDIR)/$(NAME).a
+all:
+	make -j4 $(BINDIR)/$(NAME).a
 
 $(NAME): $(BINDIR)/$(NAME).a
 
@@ -144,7 +152,7 @@ fclean:
 	/bin/rm -f $(TESTNAME)
 	/bin/rm -rf $(BINDIR)/
 
-re: 
+re:
 	$(MAKE) fclean
 	$(MAKE) all
 

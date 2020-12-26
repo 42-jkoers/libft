@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/01 13:31:41 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/12/23 13:10:21 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/12/26 13:45:10 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,9 @@ int			ft_get_next_line(const int fd, char **line)
 			return (error(&fds[fd]));
 		cur = cur->next;
 		cur->size = read(fd, cur->data, BUFFER_SIZE);
-		if (cur->size == -1)
-			return (error(&fds[fd]));
-		if (found_end(cur, &total_size) || cur->size == 0)
+		if (cur->size == -1 || cur->size == 0)
+			return (cur->size == error(&fds[fd]) ? -1 : 0);
+		if (found_end(cur, &total_size))
 			return (join(&fds[fd], total_size, line));
 	}
 	return (error(&fds[fd]));
