@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:51:21 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/12/26 22:14:43 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/12/28 18:45:26 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,8 @@ void				ft_arr_voidp_free(t_arr_voidp *arr, void (*del)(void *));
 void				ft_arr_voidp_shift(t_arr_voidp **arr, void (*del)(void *));
 void				ft_arr_voidp_pop(t_arr_voidp **arr, void (*del)(void *));
 void				**ft_arr_voidp_concat(t_arr_voidp *arr, size_t *length);
+double				ft_strtodbl(char *str);
+
 
 /*
 ** typedef struct		s_arr_long

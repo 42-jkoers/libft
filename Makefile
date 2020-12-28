@@ -6,7 +6,7 @@
 #    By: joppe <joppe@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/23 17:53:14 by jkoers        #+#    #+#                  #
-#    Updated: 2020/12/26 22:16:11 by jkoers        ########   odam.nl          #
+#    Updated: 2020/12/28 18:45:02 by jkoers        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,6 +106,7 @@ SOURCES			= $(SRCDIR)/ft_abs.c \
 				  $(SRCDIR)/ft_strnstr.c \
 				  $(SRCDIR)/ft_strrchr.c \
 				  $(SRCDIR)/ft_strset.c \
+				  $(SRCDIR)/ft_strtodbl.c \
 				  $(SRCDIR)/ft_strtolower.c \
 				  $(SRCDIR)/ft_strtonum.c \
 				  $(SRCDIR)/ft_strtonum_u.c \
