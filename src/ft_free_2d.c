@@ -6,7 +6,7 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/23 14:24:44 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/12/25 18:21:25 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/12/28 22:42:53 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void	ft_free_2d(void **arr, size_t length)
 			free(arr[length]);
 	}
 	free(arr);
+	arr = NULL;
 }
