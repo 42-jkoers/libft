@@ -6,12 +6,13 @@
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/29 23:54:47 by jkoers        #+#    #+#                 */
-/*   Updated: 2020/12/30 00:00:42 by jkoers        ########   odam.nl         */
+/*   Updated: 2020/12/30 00:02:33 by jkoers        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
+#include <stdlib.h>
 
 void	ft_free_until_null_void(void **arr)
 {
