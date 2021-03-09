@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_arr_voidp.c                                     :+:    :+:            */
+/*   ft_arr.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
@@ -15,13 +15,13 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-t_arr_voidp	*ft_arr_voidp(size_t initial_size)
+t_arr	*ft_arr(size_t initial_size)
 {
-	t_arr_voidp	*arr;
+	t_arr	*arr;
 
 	if (initial_size == 0)
 		initial_size = ARR_DEFAULT_SIZE;
-	arr = malloc(sizeof(t_arr_voidp));
+	arr = malloc(sizeof(t_arr));
 	if (arr == NULL)
 		return (NULL);
 	arr->table = malloc(initial_size * sizeof(void *));
@@ -36,7 +36,7 @@ t_arr_voidp	*ft_arr_voidp(size_t initial_size)
 	return (arr);
 }
 
-static void	*ft_arr_voidp_grow(t_arr_voidp *arr, size_t new_size)
+static void	*ft_arr_grow(t_arr *arr, size_t new_size)
 {
 	void		*new_table;
 
@@ -50,17 +50,17 @@ static void	*ft_arr_voidp_grow(t_arr_voidp *arr, size_t new_size)
 	return (arr->table);
 }
 
-void	*ft_arr_voidp_set(t_arr_voidp **arr, size_t i, void *value)
+void	*ft_arr_set(t_arr **arr, size_t i, void *value)
 {
 	if (arr == NULL || *arr == NULL)
 	{
-		*arr = ft_arr_voidp(i + ARR_DEFAULT_SIZE);
+		*arr = ft_arr(i + ARR_DEFAULT_SIZE);
 		if (*arr == NULL)
 			return (NULL);
 	}
 	else if ((*arr)->start_i + i >= (*arr)->size)
 	{
-		if (ft_arr_voidp_grow(*arr, (*arr)->size + i) == NULL)
+		if (ft_arr_grow(*arr, (*arr)->size + i) == NULL)
 			return (NULL);
 	}
 	(*arr)->table[(*arr)->start_i + i] = value;
@@ -69,7 +69,7 @@ void	*ft_arr_voidp_set(t_arr_voidp **arr, size_t i, void *value)
 	return (*((*arr)->table + (*arr)->start_i + i));
 }
 
-void	*ft_arr_voidp_get(t_arr_voidp *arr, size_t i)
+void	*ft_arr_get(t_arr *arr, size_t i)
 {
 	if (arr == NULL)
 		return (NULL);
@@ -78,7 +78,7 @@ void	*ft_arr_voidp_get(t_arr_voidp *arr, size_t i)
 	return (arr->table[arr->start_i + i]);
 }
 
-void	*ft_arr_voidp_push(t_arr_voidp **arr, void *value)
+void	*ft_arr_push(t_arr **arr, void *value)
 {
 	size_t	i;
 
@@ -86,5 +86,5 @@ void	*ft_arr_voidp_push(t_arr_voidp **arr, void *value)
 		i = 0;
 	else
 		i = (*arr)->length;
-	return (ft_arr_voidp_set(arr, i, value));
+	return (ft_arr_set(arr, i, value));
 }

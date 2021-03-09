@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_arr_voidp2.c                                    :+:    :+:            */
+/*   ft_arr2.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jkoers <jkoers@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-void	ft_arr_voidp_free(t_arr_voidp *arr, void (*del)(void *))
+void	ft_arr_free(t_arr *arr, void (*del)(void *))
 {
 	size_t		i;
 
@@ -36,7 +36,7 @@ void	ft_arr_voidp_free(t_arr_voidp *arr, void (*del)(void *))
 	arr = NULL;
 }
 
-void	ft_arr_voidp_shift(t_arr_voidp **arr, void (*del)(void *))
+void	ft_arr_shift(t_arr **arr, void (*del)(void *))
 {
 	if (arr == NULL || *arr == NULL || (*arr)->length == 0)
 		return ;
@@ -46,7 +46,7 @@ void	ft_arr_voidp_shift(t_arr_voidp **arr, void (*del)(void *))
 	(*arr)->length -= 1;
 }
 
-void	ft_arr_voidp_pop(t_arr_voidp **arr, void (*del)(void *))
+void	ft_arr_pop(t_arr **arr, void (*del)(void *))
 {
 	if (arr == NULL || *arr == NULL || (*arr)->length == 0)
 		return ;
@@ -55,7 +55,7 @@ void	ft_arr_voidp_pop(t_arr_voidp **arr, void (*del)(void *))
 	(*arr)->length -= 1;
 }
 
-void	**ft_arr_voidp_concat(t_arr_voidp *arr, size_t *length)
+void	**ft_arr_concat(t_arr *arr, size_t *length)
 {
 	void	**res;
 
@@ -75,6 +75,6 @@ void	**ft_arr_voidp_concat(t_arr_voidp *arr, size_t *length)
 	res = malloc((arr->length + 1) * sizeof(void *));
 	ft_memcpy(res, arr->table + arr->start_i, arr->length * sizeof(void *));
 	res[arr->length] = NULL;
-	ft_arr_voidp_free(arr, NULL);
+	ft_arr_free(arr, NULL);
 	return (res);
 }
