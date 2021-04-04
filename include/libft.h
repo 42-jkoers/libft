@@ -123,7 +123,6 @@ typedef struct s_arr
 	size_t		size;
 	void		**table;
 }				t_arr;
-t_arr			*ft_arr(size_t initial_size);
 void			*ft_arr_set(t_arr **arr, size_t i, void *value);
 void			*ft_arr_get(const t_arr *arr, size_t i);
 void			*ft_arr_push(t_arr **arr, void *value);
