@@ -74,8 +74,7 @@ re:
 	$(MAKE) all
 
 findsources:
-	echo "# SRC = find src/ -name \"\*.c\" -exec echo \"\{\} \\\\\" \\\;" \
-> sources.mk
+	echo "# SRC = \$$(shell find $(SRCDIR)/ -type f -name '*.c')" > sources.mk
 	echo "SRC = \\" >> sources.mk
 	find src/ -name "*.c" -exec echo "{} \\" \; >> sources.mk
 

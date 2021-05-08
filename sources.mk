@@ -1,4 +1,4 @@
-# SRC = find src/ -name "\*.c" -exec echo "\{\} \" \;
+# SRC = $(shell find src/ -type f -name '*.c')
 SRC = \
 src/ft_putnbr_fd.c \
 src/ft_lstadd_front.c \
