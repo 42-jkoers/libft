@@ -17,7 +17,7 @@
 # include <stdbool.h>
 # include <stddef.h>
 # include <unistd.h>
-# define CLEARLINE "\33[2K\r"
+# define FT_CLEARLINE "\33[2K\r"
 
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
@@ -34,7 +34,6 @@ char			*ft_strchr(const char *str, char c);
 char			*ft_strrchr(const char *str, char c);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
-int				ft_atoi(const char *str);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
@@ -48,12 +47,7 @@ char			*ft_substr(const char *s, unsigned int start, size_t len);
 char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strtrim(const char *s1, const char *set);
 char			**ft_split(const char *s, char c);
-char			*ft_itoa(int n);
 char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
-void			ft_putchar_fd(char c, int fd);
-void			ft_putstr_fd(char *s, int fd);
-void			ft_putendl_fd(char *s, int fd);
-void			ft_putnbr_fd(int n, int fd);
 
 typedef struct s_list
 {
@@ -78,11 +72,9 @@ t_list			*ft_lstmap(
 
 long			ft_abs(long num);
 size_t			ft_numlen(long num, unsigned long base);
-size_t			ft_numlen_u(unsigned long num, unsigned long base);
-char			*ft_numtostr(long num);
-char			*ft_numtostr_u(unsigned long num);
+size_t			ft_numlenu(unsigned long num, unsigned long base);
 char			*ft_numtobase(long num, const char *base);
-char			*ft_numtobase_u(unsigned long num, const char *base);
+char			*ft_numtobaseu(unsigned long num, const char *base);
 char			*ft_strndup(const char *str, size_t len);
 char			*ft_strndup_unsafe(const char *str, size_t len);
 char			*ft_strcat(char *dest, const char *src);
@@ -98,12 +90,12 @@ bool			ft_includes(const char *str, char c);
 void			ft_strset(char *str, char c, size_t n);
 int				ft_isspace(char c);
 long			ft_strtonum(const char *str);
-unsigned long	ft_strtonum_u(const char *str);
+unsigned long	ft_strtonumu(const char *str);
 long			ft_max(long a, long b);
-unsigned long	ft_max_u(unsigned long a, unsigned long b);
+unsigned long	ft_maxu(unsigned long a, unsigned long b);
 double			ft_maxf(double a, double b);
 long			ft_min(long a, long b);
-unsigned long	ft_min_u(unsigned long a, unsigned long b);
+unsigned long	ft_minu(unsigned long a, unsigned long b);
 double			ft_minf(double a, double b);
 int				ft_get_next_line(int fd, char **line);
 

@@ -14,14 +14,14 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-char	*ft_numtobase_u(unsigned long num, const char *base)
+char	*ft_numtobaseu(unsigned long num, const char *base)
 {
 	size_t			numlen;
 	unsigned long	base_n;
 	char			*result;
 
 	base_n = (unsigned long)ft_strlen(base);
-	numlen = ft_numlen_u(num, base_n);
+	numlen = ft_numlenu(num, base_n);
 	result = malloc((numlen + 1) * sizeof(char));
 	if (result == NULL)
 		return (NULL);

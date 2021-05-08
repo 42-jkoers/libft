@@ -15,9 +15,9 @@
 
 int	main(void)
 {
-	printf("%lu 3\n", ft_numlen_u(123, 10));
-	printf("%lu 8\n", ft_numlen_u(255, 2));
-	printf("%lu 3\n", ft_numlen_u(4, 2));
-	printf("%lu 1\n", ft_numlen_u(0, 2));
+	printf("%lu 3\n", ft_numlenu(123, 10));
+	printf("%lu 8\n", ft_numlenu(255, 2));
+	printf("%lu 3\n", ft_numlenu(4, 2));
+	printf("%lu 1\n", ft_numlenu(0, 2));
 	return (0);
 }

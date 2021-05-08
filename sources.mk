@@ -1,8 +1,6 @@
 # SRC = $(shell find src/ -type f -name '*.c')
 SRC = \
-src/ft_putnbr_fd.c \
 src/ft_lstadd_front.c \
-src/ft_putendl_fd.c \
 src/ft_strtodbl.c \
 src/ft_strncpy.c \
 src/ft_memcmp.c \
@@ -13,7 +11,6 @@ src/ft_strset.c \
 src/ft_strndup_unsafe.c \
 src/ft_exit_err.c \
 src/ft_realloc.c \
-src/ft_strtonum_u.c \
 src/ft_lstclear.c \
 src/ft_lstshift.c \
 src/ft_lstpush_back.c \
@@ -39,7 +36,6 @@ src/ft_atoi.c \
 src/ft_memcpy.c \
 src/ft_split_or.c \
 src/ft_arrchr.c \
-src/ft_putchar_fd.c \
 src/ft_memchr.c \
 src/ft_split.c \
 src/ft_abs.c \
@@ -65,7 +61,6 @@ src/ft_strlen.c \
 src/ft_isspace.c \
 src/ft_bzero.c \
 src/ft_isdigit.c \
-src/ft_strtonum.c \
 src/ft_strcount.c \
 src/ft_isascii.c \
 src/ft_strtrim.c \
@@ -74,10 +69,8 @@ src/ft_strlcat.c \
 src/ft_numtostr.c \
 src/ft_tolower.c \
 src/ft_split_length.c \
-src/ft_putstr_fd.c \
 src/ft_lstlast.c \
 src/ft_radians.c \
-src/ft_numtostr_u.c \
 src/ft_lstiter.c \
 src/ft_readfile.c \
 src/ft_putstr.c \

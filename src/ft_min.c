@@ -20,7 +20,7 @@ long	ft_min(long a, long b)
 		return (b);
 }
 
-unsigned long	ft_min_u(unsigned long a, unsigned long b)
+unsigned long	ft_minu(unsigned long a, unsigned long b)
 {
 	if (a < b)
 		return (a);

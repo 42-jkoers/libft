@@ -20,7 +20,7 @@ long	ft_max(long a, long b)
 		return (b);
 }
 
-unsigned long	ft_max_u(unsigned long a, unsigned long b)
+unsigned long	ft_maxu(unsigned long a, unsigned long b)
 {
 	if (a > b)
 		return (a);

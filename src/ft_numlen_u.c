@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stddef.h>
 
-size_t	ft_numlen_u(unsigned long num, unsigned long base)
+size_t	ft_numlenu(unsigned long num, unsigned long base)
 {
 	size_t	digits;
 
