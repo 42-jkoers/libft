@@ -161,7 +161,9 @@ void			ft_buf_free(t_readbuf *buf);
 
 bool			ft_strtol_safe(long *num, const char *str);
 bool			ft_strtol_clamp(long *num, const char *str, long min, long max);
-
+bool			ft_strtoul_safe(unsigned long *num, const char *str);
+bool			ft_strtoul_clamp(unsigned long *num, const char *str,
+					unsigned long min, unsigned long max);
 void			ft_exit_err(const char *msg);
 
 #endif
