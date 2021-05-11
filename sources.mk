@@ -32,7 +32,6 @@ src/ft_strjoin.c \
 src/ft_strcpy.c \
 src/ft_strtoupper.c \
 src/ft_strchr.c \
-src/ft_atoi.c \
 src/ft_memcpy.c \
 src/ft_split_or.c \
 src/ft_arrchr.c \
@@ -74,7 +73,6 @@ src/ft_radians.c \
 src/ft_lstiter.c \
 src/ft_readfile.c \
 src/ft_putstr.c \
-src/ft_itoa.c \
 src/ft_malloc.c \
 src/ft_arr2.c \
 src/ft_numlen.c \
